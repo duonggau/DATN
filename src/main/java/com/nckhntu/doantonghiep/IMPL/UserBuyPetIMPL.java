@@ -1,36 +1,33 @@
 package com.nckhntu.doantonghiep.IMPL;
 
 import com.nckhntu.doantonghiep.DTO.UserBuyPetDTO;
-<<<<<<< HEAD
 import com.nckhntu.doantonghiep.Entity.*;
 import com.nckhntu.doantonghiep.Repository.*;
-=======
+
 import com.nckhntu.doantonghiep.Entity.PetEntity;
 import com.nckhntu.doantonghiep.Entity.UserBuyPetEntity;
 import com.nckhntu.doantonghiep.Entity.UserEntity;
 import com.nckhntu.doantonghiep.Repository.PetRepository;
 import com.nckhntu.doantonghiep.Repository.UserBuyPetRepository;
 import com.nckhntu.doantonghiep.Repository.UserRepository;
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
+
 import com.nckhntu.doantonghiep.Service.UserByPetService;
 import jakarta.servlet.http.HttpSession;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-<<<<<<< HEAD
+
 import org.springframework.scheduling.annotation.Scheduled;
-=======
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
+
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
-<<<<<<< HEAD
+
 import java.time.LocalDateTime;
-=======
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,25 +38,23 @@ public class UserBuyPetIMPL implements UserByPetService {
     private final PetRepository petRepository;
     private final UserBuyPetRepository userBuyPetRepository;
     private final HttpSession session;
-<<<<<<< HEAD
+
     private final ChatRepository chatRepository;
     private final RoomRepository roomRepository;
 
-    public UserBuyPetIMPL(UserRepository userRepository, ModelMapper modelMapper, PetRepository petRepository, UserBuyPetRepository userBuyPetRepository, HttpSession session, ChatRepository chatRepository, RoomRepository roomRepository) {
-=======
 
-    public UserBuyPetIMPL(UserRepository userRepository, ModelMapper modelMapper, PetRepository petRepository, UserBuyPetRepository userBuyPetRepository, HttpSession session) {
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
+
+    public UserBuyPetIMPL(UserRepository userRepository, ModelMapper modelMapper, PetRepository petRepository, UserBuyPetRepository userBuyPetRepository, HttpSession session, ChatRepository chatRepository, RoomRepository roomRepository) {
+
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.petRepository = petRepository;
         this.userBuyPetRepository = userBuyPetRepository;
         this.session = session;
-<<<<<<< HEAD
+
+
         this.chatRepository = chatRepository;
         this.roomRepository = roomRepository;
-=======
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
     }
 
     @Override
@@ -151,7 +146,7 @@ public class UserBuyPetIMPL implements UserByPetService {
 
 // Lưu đối tượng vào database
             userBuyPetRepository.save(userBuyPetEntity);
-<<<<<<< HEAD
+
                 String contentAuto =
                         "    <div style=\"background: white; padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); display: inline-block;\">\n" +
                         "        <h1 style=\"color: #ff6600;\">Cảm ơn quý khách!</h1>\n" +
@@ -164,9 +159,6 @@ public class UserBuyPetIMPL implements UserByPetService {
             chatEntity.setRoomId(roomEntity);
             chatEntity.setCreatedAt(Timestamp.from(Instant.now()));
             chatRepository.save(chatEntity);
-
-=======
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
 
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
@@ -194,7 +186,6 @@ public class UserBuyPetIMPL implements UserByPetService {
     public void deleteUserBuyPet(UserBuyPetDTO userBuyPetDTO) {
 
     }
-<<<<<<< HEAD
 
 
     @Scheduled(cron = "0 0 0 * * ?") // Chạy mỗi ngày lúc 0h sáng
@@ -218,6 +209,5 @@ public class UserBuyPetIMPL implements UserByPetService {
             chatRepository.save(chatEntity);
         }
     }
-=======
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
+
 }

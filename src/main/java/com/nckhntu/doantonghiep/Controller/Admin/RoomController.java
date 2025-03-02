@@ -1,13 +1,10 @@
 package com.nckhntu.doantonghiep.Controller.Admin;
 
 import com.nckhntu.doantonghiep.DTO.RoomDTO;
-<<<<<<< HEAD
 import com.nckhntu.doantonghiep.Entity.RoomEntity;
 import com.nckhntu.doantonghiep.Entity.UserEntity;
 import com.nckhntu.doantonghiep.Repository.RoomRepository;
 import com.nckhntu.doantonghiep.Repository.UserRepository;
-=======
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
 import com.nckhntu.doantonghiep.Service.RoomService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +18,6 @@ import java.util.List;
 @RequestMapping("/admin/room")
 public class RoomController {
     private final RoomService roomService;
-<<<<<<< HEAD
     private final UserRepository userRepository;
     private final RoomRepository roomRepository;
 
@@ -29,11 +25,6 @@ public class RoomController {
         this.roomService = roomService;
         this.userRepository = userRepository;
         this.roomRepository = roomRepository;
-=======
-
-    public RoomController(RoomService roomService) {
-        this.roomService = roomService;
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
     }
 
     @GetMapping
@@ -48,7 +39,7 @@ public class RoomController {
         }
     }
 
-<<<<<<< HEAD
+
     @GetMapping("/action/user/{id}")
     public String actionRoomUser(@PathVariable Long id, Model model) {
         try {
@@ -61,8 +52,7 @@ public class RoomController {
             return "Admin/Room/ChatRoom";
         }
     }
-=======
->>>>>>> e493c0935f66b5b5c6e645fd2628356d617c215c
+
     @GetMapping("/user/{id}")
     public String user(@PathVariable Long id, Model model) {
         try {
